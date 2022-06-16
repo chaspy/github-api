@@ -4,7 +4,7 @@ set -eu
 ORG="quipper"
 REPO="terraform"
 
-if [ $# -ne 2 ]; then
+if [ $# -ne 1 ]; then
   echo "Usage: $0 <issue number>"
   exit 1
 fi
