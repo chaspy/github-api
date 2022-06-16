@@ -3,6 +3,7 @@ set -eu
 
 ORG="quipper"
 REPO="terraform"
+NUM=$1
 
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <issue number>"
@@ -14,5 +15,5 @@ curl \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://api.github.com/repos/${ORG}/${REPO}/issues/44895/labels" \
+  "https://api.github.com/repos/${ORG}/${REPO}/issues/${NUM}/labels" \
   -d '{"labels":["exclude-autoclose"]}'
